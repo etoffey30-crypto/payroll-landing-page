@@ -10,6 +10,9 @@ export default defineConfig(({ mode }) => {
   
   return {
     base: isVercel ? "/" : "/payroll-landing-page/",
+    build: {
+      chunkSizeWarningLimit: 2000,
+    },
     server: {
       host: "::",
       port: 8080,
