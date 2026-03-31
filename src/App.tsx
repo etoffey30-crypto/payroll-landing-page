@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/payroll-landing-page/">
+      <BrowserRouter basename={window.location.hostname.includes("vercel.app") ? "/" : "/payroll-landing-page/"}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/features" element={<FeaturesPage />} />
