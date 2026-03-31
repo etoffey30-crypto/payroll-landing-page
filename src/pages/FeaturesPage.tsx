@@ -63,9 +63,9 @@ const features = [
 ];
 
 const showcases = [
-  { img: "/assets/features-payroll.png", title: "Payroll Dashboard", desc: "Process salaries, view deductions, and manage bank transfers from a single intuitive dashboard." },
+  { img: `${import.meta.env.BASE_URL}assets/features-payroll.png`, title: "Payroll Dashboard", desc: "Process salaries, view deductions, and manage bank transfers from a single intuitive dashboard." },
   { img: featuresCompliance, title: "Tax & Compliance Engine", desc: "Automatically calculate PAYE, SSNIT contributions, and pension filings with full Ghana law compliance." },
-  { img: "/assets/features-portal.png", title: "Employee Self-Service", desc: "Give employees access to payslips, leave balances, and personal info updates from any device." },
+  { img: `${import.meta.env.BASE_URL}assets/features-portal.png`, title: "Employee Self-Service", desc: "Give employees access to payslips, leave balances, and personal info updates from any device." },
   { img: featuresAnalytics, title: "Analytics & Reporting", desc: "Gain insights with real-time charts, workforce metrics, and exportable custom reports." },
 ];
 

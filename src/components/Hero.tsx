@@ -12,10 +12,10 @@ const highlights = [
 ];
 
 const heroImages = [
-  { src: "/assets/image1.jpg", alt: "PayrollGhana Professional Services" },
-  { src: "/assets/hero-businessman.jpg", alt: "Expert Payroll Consultation" },
-  { src: "/assets/image2.jpg", alt: "Modern HR Management" },
-  { src: "/assets/image3.png", alt: "Advanced Payroll Dashboard" },
+  { src: `${import.meta.env.BASE_URL}assets/image1.jpg`, alt: "PayrollGhana Professional Services" },
+  { src: `${import.meta.env.BASE_URL}assets/hero-businessman.jpg`, alt: "Expert Payroll Consultation" },
+  { src: `${import.meta.env.BASE_URL}assets/image2.jpg`, alt: "Modern HR Management" },
+  { src: `${import.meta.env.BASE_URL}assets/image3.png`, alt: "Advanced Payroll Dashboard" },
 ];
 
 const Hero = () => {

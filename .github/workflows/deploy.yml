@@ -1,7 +1,9 @@
 name: Deploy static content to Pages
 
 on:
-  # Manual trigger only (per user request)
+  push:
+    branches: ["main"]
+  # Manual trigger also available
   workflow_dispatch:
 
 # Permissions required to push to the gh-pages branch

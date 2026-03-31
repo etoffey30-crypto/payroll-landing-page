@@ -8,17 +8,17 @@ import resourcesHero from "@/assets/resources-hero.jpg";
 import DownloadModal from "@/components/DownloadModal";
 
 const ebooks = [
-  { title: "Confused about your payslip deductions in Ghana", desc: "Understand your payslip deductions and how they affect your take-home pay.", category: "Guide", color: "from-secondary to-accent", file: "/ebooks/Confused-about-your-payslip-deductions-in-Ghana.pdf", image: "/ebooks/covers/confused_payslip.png" },
-  { title: "Demystifying Your Ghana Pay Slip", desc: "What every worker should know about reading and analyzing their Ghana payslip.", category: "Guide", color: "from-primary to-secondary", file: "/ebooks/Demystifying-Your-Ghana-Pay-Slip-What-Every-Worker-Should-Know.pdf", image: "/ebooks/covers/demystifying_payslip.png" },
-  { title: "Navigating Ghana's Labor Laws", desc: "A simple guide to understanding and staying compliant with Ghana's labor laws.", category: "Compliance", color: "from-accent to-primary", file: "/ebooks/Navigating-Ghanas-Labor-Laws-Made-Simple.pdf", image: "/ebooks/covers/labor_laws.png" },
-  { title: "PayrollGhana Application", desc: "An overview of the PayrollGhana HRM and Payroll application features.", category: "Platform", color: "from-secondary to-primary", file: "/ebooks/PayrollGhana-HRMPayroll-Application.pdf", image: "/ebooks/covers/payrollghana_app.png" },
-  { title: "Revolutionize Your HR Management", desc: "How to modernize your HR operations using the PayrollGhana software.", category: "HR Guide", color: "from-secondary to-accent", file: "/ebooks/Revolutionize-Your-HR-Management-with-PayrollGhana-HRM-Software (1).pdf" },
-  { title: "Run Your Payroll From Anywhere", desc: "The benefits of cloud-based payroll systems and why you should switch.", category: "Payroll", color: "from-primary to-secondary", file: "/ebooks/Run-Your-Payroll-From-Anywhere-Anytime.pdf" },
-  { title: "Tired of HR Paperwork", desc: "Embrace automation to free up time from tedious HR paperwork.", category: "Automation", color: "from-accent to-primary", file: "/ebooks/Tired-of-HR-Paperwork-Automation-is-Here.pdf" },
-  { title: "Transform Your Business", desc: "Discover how cloud payroll solutions can transform your entire business workflow.", category: "Cloud", color: "from-secondary to-primary", file: "/ebooks/Transform-Your-Business-with-Cloud-Payroll-Solutions.pdf" },
-  { title: "Transform Your HR Management Today", desc: "Actionable steps to revolutionize your HR processes today.", category: "HR Guide", color: "from-secondary to-accent", file: "/ebooks/Transform-Your-HR-Management-Today.pdf" },
-  { title: "Transform Your Payroll Process in Ghana", desc: "Modernize your manual payroll process and automate tax compliance.", category: "Payroll", color: "from-primary to-secondary", file: "/ebooks/Transform-Your-Payroll-Process-in-Ghana-Today.pdf" },
-  { title: "Unlock Hidden Savings", desc: "Ghana tax relief secrets to help you and your employees save more.", category: "Tax Guide", color: "from-accent to-primary", file: "/ebooks/Unlock-Hidden-Savings-Ghana-Tax-Relief-Secrets.pdf" },
+  { title: "Confused about your payslip deductions in Ghana", desc: "Understand your payslip deductions and how they affect your take-home pay.", category: "Guide", color: "from-secondary to-accent", file: `${import.meta.env.BASE_URL}ebooks/Confused-about-your-payslip-deductions-in-Ghana.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/confused_payslip.png` },
+  { title: "Demystifying Your Ghana Pay Slip", desc: "What every worker should know about reading and analyzing their Ghana payslip.", category: "Guide", color: "from-primary to-secondary", file: `${import.meta.env.BASE_URL}ebooks/Demystifying-Your-Ghana-Pay-Slip-What-Every-Worker-Should-Know.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/demystifying_payslip.png` },
+  { title: "Navigating Ghana's Labor Laws", desc: "A simple guide to understanding and staying compliant with Ghana's labor laws.", category: "Compliance", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Navigating-Ghanas-Labor-Laws-Made-Simple.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/labor_laws.png` },
+  { title: "PayrollGhana Application", desc: "An overview of the PayrollGhana HRM and Payroll application features.", category: "Platform", color: "from-secondary to-primary", file: `${import.meta.env.BASE_URL}ebooks/PayrollGhana-HRMPayroll-Application.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/payrollghana_app.png` },
+  { title: "Revolutionize Your HR Management", desc: "How to modernize your HR operations using the PayrollGhana software.", category: "HR Guide", color: "from-secondary to-accent", file: `${import.meta.env.BASE_URL}ebooks/Revolutionize-Your-HR-Management-with-PayrollGhana-HRM-Software (1).pdf` },
+  { title: "Run Your Payroll From Anywhere", desc: "The benefits of cloud-based payroll systems and why you should switch.", category: "Payroll", color: "from-primary to-secondary", file: `${import.meta.env.BASE_URL}ebooks/Run-Your-Payroll-From-Anywhere-Anytime.pdf` },
+  { title: "Tired of HR Paperwork", desc: "Embrace automation to free up time from tedious HR paperwork.", category: "Automation", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Tired-of-HR-Paperwork-Automation-is-Here.pdf` },
+  { title: "Transform Your Business", desc: "Discover how cloud payroll solutions can transform your entire business workflow.", category: "Cloud", color: "from-secondary to-primary", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-Business-with-Cloud-Payroll-Solutions.pdf` },
+  { title: "Transform Your HR Management Today", desc: "Actionable steps to revolutionize your HR processes today.", category: "HR Guide", color: "from-secondary to-accent", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-HR-Management-Today.pdf` },
+  { title: "Transform Your Payroll Process in Ghana", desc: "Modernize your manual payroll process and automate tax compliance.", category: "Payroll", color: "from-primary to-secondary", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-Payroll-Process-in-Ghana-Today.pdf` },
+  { title: "Unlock Hidden Savings", desc: "Ghana tax relief secrets to help you and your employees save more.", category: "Tax Guide", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Unlock-Hidden-Savings-Ghana-Tax-Relief-Secrets.pdf` },
 ];
 
 const blogPosts = [
@@ -91,7 +91,7 @@ const ResourcesPage = () => {
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <TiltCard>
-            <motion.img src="/assets/imagee.png" alt="PayrollGhana Dashboard Preview" width={1024} height={640} loading="lazy" className="rounded-2xl shadow-elevated w-full max-w-4xl mx-auto border border-border" whileHover={{ scale: 1.01 }} />
+            <motion.img src={`${import.meta.env.BASE_URL}assets/imagee.png`} alt="PayrollGhana Dashboard Preview" width={1024} height={640} loading="lazy" className="rounded-2xl shadow-elevated w-full max-w-4xl mx-auto border border-border" whileHover={{ scale: 1.01 }} />
           </TiltCard>
         </ScrollReveal>
       </div>
