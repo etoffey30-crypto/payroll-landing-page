@@ -20,18 +20,24 @@ const App = () => (
       <Toaster />
       <Sonner />
       <SocialSidebar />
-      <BrowserRouter basename={window.location.hostname.includes(".github.io") ? "/payroll-landing-page/" : "/"}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/features" element={<FeaturesPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <BrowserRouter basename={window.location.hostname.includes(".github.io") ? "/payroll-landing-page/" : "/"}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/features" element={<FeaturesPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </motion.div>
     </TooltipProvider>
   </QueryClientProvider>
 );
