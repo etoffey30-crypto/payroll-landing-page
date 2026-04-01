@@ -1,7 +1,14 @@
 import logo from "@/assets/logo.png";
+import { Facebook, Linkedin, MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MagneticButton, ScrollReveal } from "./AnimationUtils";
+
+const socialLinks = [
+  { id: "facebook", icon: Facebook, href: "https://www.facebook.com/payrollghana/", label: "Facebook" },
+  { id: "linkedin", icon: Linkedin, href: "https://www.linkedin.com/showcase/payroll-ghana/?viewAsMember=true", label: "LinkedIn" },
+  { id: "whatsapp", icon: MessageCircle, href: "https://wa.me/+233596561245", label: "WhatsApp" },
+];
 
 const footerSections = [
   { title: "Platform", links: [{ label: "Features", href: "/features" }, { label: "Pricing", href: "/pricing" }, { label: "Security", href: "/features" }, { label: "API", href: "/features" }] },
@@ -23,9 +30,26 @@ const Footer = () => (
                 whileHover={{ scale: 1.05 }}
               />
             </Link>
-            <p className="text-sm text-primary-foreground/60 leading-relaxed">
+            <p className="text-sm text-primary-foreground/60 leading-relaxed mb-6">
               A subsidiary of JPCann Associates Ltd. Cloud-based payroll & HR management for Ghanaian businesses.
             </p>
+            <div className="flex gap-4">
+              {socialLinks.map((s) => (
+                <MagneticButton key={s.id}>
+                  <motion.a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground hover:bg-secondary hover:text-white transition-all border border-primary-foreground/5 group"
+                    aria-label={`Follow on ${s.label}`}
+                  >
+                    <s.icon size={20} className="group-hover:rotate-6 transition-transform" />
+                  </motion.a>
+                </MagneticButton>
+              ))}
+            </div>
           </div>
           {footerSections.map((sec) => (
             <div key={sec.title}>

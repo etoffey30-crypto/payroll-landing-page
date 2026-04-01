@@ -9,6 +9,7 @@ import PricingPage from "./pages/PricingPage.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ResourcesPage from "./pages/ResourcesPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
+import SocialSidebar from "./components/SocialSidebar.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <SocialSidebar />
       <BrowserRouter basename={window.location.hostname.includes(".github.io") ? "/payroll-landing-page/" : "/"}>
         <Routes>
           <Route path="/" element={<Index />} />
