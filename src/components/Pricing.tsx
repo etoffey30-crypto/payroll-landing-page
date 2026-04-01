@@ -13,7 +13,7 @@ const plans = [
 const allFeatures = ["HR + Payroll", "Attendance & Leave", "Task Management", "Expense Tracking", "Training", "24/7 Support"];
 
 const Pricing = () => (
-  <section id="pricing" className="py-20 md:py-28 bg-muted/50 relative overflow-hidden">
+  <section id="pricing" className="py-24 md:py-32 bg-muted/50 relative overflow-hidden">
     {/* Animated background orbs */}
     <motion.div
       className="absolute top-20 left-10 w-64 h-64 bg-secondary/5 rounded-full blur-[80px] pointer-events-none"
@@ -21,8 +21,8 @@ const Pricing = () => (
       transition={{ duration: 7, repeat: Infinity }}
     />
 
-    <div className="container mx-auto px-4 relative z-10">
-      <ScrollReveal className="text-center max-w-2xl mx-auto mb-16">
+    <div className="container mx-auto px-4 relative z-10 pt-10">
+      <ScrollReveal className="text-center max-w-2xl mx-auto mb-20">
         <motion.span
           className="text-sm font-semibold text-secondary uppercase tracking-wider inline-block"
           whileHover={{ scale: 1.1 }}
@@ -37,76 +37,73 @@ const Pricing = () => (
         </p>
       </ScrollReveal>
 
-      <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5" staggerDelay={0.1}>
+      <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6" staggerDelay={0.1}>
         {plans.map((p) => (
           <StaggerItem key={p.name}>
             <TiltCard>
               <SpotlightCard
-                className={`rounded-2xl p-6 flex flex-col border transition-all duration-300 h-full relative ${
+                className={`rounded-2xl p-6 flex flex-col border transition-all duration-500 h-full relative group ${
                   p.highlight
-                    ? "gradient-primary text-primary-foreground border-transparent shadow-elevated scale-[1.03]"
-                    : "bg-card border-border shadow-card"
+                    ? "gradient-primary text-white border-transparent shadow-elevated scale-[1.05] ring-2 ring-secondary/20"
+                    : "bg-white dark:bg-card border-border shadow-card hover:border-secondary/30"
                 }`}
               >
                 {p.highlight && (
                   <motion.div
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-secondary text-primary-foreground px-3 py-1 rounded-full text-xs font-bold"
-                    animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-secondary text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-lg z-50 whitespace-nowrap"
+                    animate={{ y: [0, -4, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   >
-                    <Star className="w-3 h-3" /> Most Popular
+                    <Star className="w-3 h-3 fill-white" /> Most Popular
                   </motion.div>
                 )}
                 <motion.h3
-                  className={`font-bold text-lg ${p.highlight ? "text-primary-foreground" : "text-foreground"}`}
-                  whileHover={{ scale: 1.05 }}
+                  className={`font-bold text-xl ${p.highlight ? "text-white" : "text-foreground"}`}
+                  whileHover={{ x: 3 }}
                 >
                   {p.name}
                 </motion.h3>
-                <div className="mt-4 mb-1">
+                <div className="mt-6 mb-1">
                   <motion.span
-                    className="text-3xl font-extrabold"
-                    whileHover={{ scale: 1.1 }}
+                    className="text-4xl font-black"
                     style={{ display: "inline-block" }}
                   >
                     {p.price}
                   </motion.span>
-                  <span className={`text-sm ${p.highlight ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+                  <span className={`text-sm ml-1 ${p.highlight ? "text-white/80" : "text-muted-foreground"}`}>
                     {p.period}
                   </span>
                 </div>
-                <p className={`text-xs mb-5 ${p.highlight ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                <p className={`text-xs mb-8 font-medium ${p.highlight ? "text-white/70" : "text-muted-foreground"}`}>
                   {p.users} user{p.users > 1 ? "s" : ""} · up to {p.employees} employees
                 </p>
-                <div className="space-y-2 flex-1">
+                <div className="space-y-4 flex-1">
                   {allFeatures.map((feat, i) => (
                     <motion.div
                       key={feat}
-                      className="flex items-center gap-2 text-sm"
-                      whileHover={{ x: 6, scale: 1.02 }}
+                      className="flex items-center gap-2.5 text-sm"
+                      whileHover={{ x: 5 }}
                       initial={{ opacity: 0, x: -10 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05 }}
                     >
-                      <motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.3 }}>
-                        <Check className="w-4 h-4 shrink-0 text-secondary" />
-                      </motion.div>
-                      <span className={p.highlight ? "text-primary-foreground/90" : "text-muted-foreground"}>
+                      <Check className={`w-4 h-4 shrink-0 ${p.highlight ? "text-white" : "text-secondary font-bold"}`} />
+                      <span className={p.highlight ? "text-white/90" : "text-foreground/80 font-medium"}>
                         {feat}
                       </span>
                     </motion.div>
                   ))}
                 </div>
-                <MagneticButton className="mt-6">
+                <MagneticButton className="mt-8">
                   <motion.a
                     href="#contact"
-                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px hsl(200 100% 50% / 0.2)" }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`block text-center py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                    className={`block text-center py-3 rounded-xl text-sm font-bold transition-all ${
                       p.highlight
-                        ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                        : "gradient-primary text-primary-foreground hover:opacity-90"
+                        ? "bg-white text-primary hover:bg-white/90 shadow-xl"
+                        : "gradient-primary text-white hover:shadow-lg hover:shadow-secondary/20"
                     }`}
                   >
                     {p.price === "₵0" ? "Start Free" : "Choose Plan"}

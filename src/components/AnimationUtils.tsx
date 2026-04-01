@@ -185,14 +185,22 @@ export const SpotlightCard = ({ children, className = "" }: { children: ReactNod
       onMouseMove={handleMouse}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`relative overflow-hidden ${className}`}
-      style={{
-        background: isHovered
-          ? `radial-gradient(300px circle at ${position.x}px ${position.y}px, hsl(200 100% 50% / 0.08), transparent 60%)`
-          : undefined,
-      }}
+      className={`relative ${className}`}
     >
-      {children}
+      {/* Spotlight Overlay */}
+      <div 
+        className="absolute inset-0 rounded-[inherit] overflow-hidden pointer-events-none z-0"
+        style={{
+          background: isHovered
+            ? `radial-gradient(400px circle at ${position.x}px ${position.y}px, hsl(200 100% 50% / 0.12), transparent 70%)`
+            : undefined,
+        }}
+      />
+      
+      {/* Content wrapper to stay above spotlight */}
+      <div className="relative z-10 w-full h-full">
+        {children}
+      </div>
     </div>
   );
 };
