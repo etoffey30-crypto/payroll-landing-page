@@ -18,7 +18,7 @@ const ebooks = [
   { title: "Transform Your Business", desc: "Discover how cloud payroll solutions can transform your entire business workflow.", category: "Cloud", color: "from-secondary to-primary", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-Business-with-Cloud-Payroll-Solutions.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/transform_business.png` },
   { title: "Transform Your HR Management Today", desc: "Actionable steps to revolutionize your HR processes today.", category: "HR Guide", color: "from-secondary to-accent", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-HR-Management-Today.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/transform_hr_today.png` },
   { title: "Transform Your Payroll Process in Ghana", desc: "Modernize your manual payroll process and automate tax compliance.", category: "Payroll", color: "from-primary to-secondary", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-Payroll-Process-in-Ghana-Today.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/transform_payroll_ghana.png` },
-  { title: "Unlock Hidden Savings", desc: "Ghana tax relief secrets to help you and your employees save more.", category: "Tax Guide", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Unlock-Hidden-Savings-Ghana-Tax-Relief-Secrets.pdf` },
+  { title: "Unlock Hidden Savings", desc: "Ghana tax relief secrets to help you and your employees save more.", category: "Tax Guide", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Unlock-Hidden-Savings-Ghana-Tax-Relief-Secrets.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/unlock_savings.png` },
 ];
 
 const blogPosts = [
