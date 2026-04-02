@@ -18,7 +18,7 @@ const ebooks = [
   { title: "Transform Your Business", desc: "Discover how cloud payroll solutions can transform your entire business workflow.", category: "Cloud", color: "from-secondary to-primary", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-Business-with-Cloud-Payroll-Solutions.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/transform_business.png` },
   { title: "Transform Your HR Management Today", desc: "Actionable steps to revolutionize your HR processes today.", category: "HR Guide", color: "from-secondary to-accent", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-HR-Management-Today.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/transform_hr_today.png` },
   { title: "Transform Your Payroll Process in Ghana", desc: "Modernize your manual payroll process and automate tax compliance.", category: "Payroll", color: "from-primary to-secondary", file: `${import.meta.env.BASE_URL}ebooks/Transform-Your-Payroll-Process-in-Ghana-Today.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/transform_payroll_ghana.png` },
-  { title: "Unlock Hidden Savings", desc: "Ghana tax relief secrets to help you and your employees save more.", category: "Tax Guide", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Unlock-Hidden-Savings-Ghana-Tax-Relief-Secrets.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/unlock_savings.png` },
+  { title: "Unlock Hidden Savings", desc: "Ghana tax relief secrets to help you and your employees save more.", category: "Tax Guide", color: "from-accent to-primary", file: `${import.meta.env.BASE_URL}ebooks/Unlock-Hidden-Savings-Ghana-Tax-Relief-Secrets.pdf`, image: `${import.meta.env.BASE_URL}ebooks/covers/unlock_savings.png`, overlayTitle: true, subtitle: "A COMPREHENSIVE GUIDE TO GHANA TAX RELIEF SECRETS" },
 ];
 
 const blogPosts = [
@@ -114,7 +114,39 @@ const ResourcesPage = () => {
                 <SpotlightCard className="bg-card rounded-2xl p-6 border border-border shadow-card h-full group flex flex-col overflow-hidden">
                   <motion.div className={`w-full h-56 -mx-6 -mt-6 mb-4 relative overflow-hidden bg-gradient-to-br ${e.color} flex items-center justify-center`} whileHover={{ scale: 1.05 }}>
                     {e.image ? (
-                      <img src={e.image} alt={e.title} className="w-full h-full object-cover" />
+                      <div className="w-full h-full relative">
+                        <img src={e.image} alt={e.title} className="w-full h-full object-cover" />
+                        
+                        {/* Smart Cover Overlay for raw images */}
+                        {e.overlayTitle && (
+                          <div className="absolute inset-0 p-6 flex flex-col justify-between z-20">
+                            {/* Top dark gradient overlay for text readability */}
+                            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/30 to-transparent pointer-events-none" />
+                            
+                            <div className="relative z-10 flex justify-between items-start">
+                              <BookOpen className="w-6 h-6 text-secondary" />
+                              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white/50">Premium Guide</span>
+                            </div>
+                            
+                            <div className="relative z-10 mb-2">
+                              <h4 className="text-sm font-black leading-tight text-white uppercase tracking-tight line-clamp-3">
+                                {e.title}
+                              </h4>
+                              {e.subtitle && (
+                                <p className="text-[7px] font-bold text-white/60 uppercase tracking-[0.1em] mt-1 line-clamp-2 leading-relaxed">
+                                  {e.subtitle}
+                                </p>
+                              )}
+                              <div className="h-0.5 w-10 bg-secondary mt-2 rounded-full" />
+                            </div>
+                            
+                            <div className="relative z-10 flex justify-between items-center text-white/40">
+                              <span className="text-[8px] font-bold uppercase tracking-widest">PayrollGhana</span>
+                              <FileText className="w-3 h-3" />
+                            </div>
+                          </div>
+                        )}
+                      </div>
                     ) : (
                       <div className="absolute inset-0 p-6 flex flex-col justify-between text-primary-foreground">
                         <div className="flex justify-between items-start">
@@ -133,7 +165,7 @@ const ResourcesPage = () => {
                         </div>
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors" />
+                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors z-10" />
                   </motion.div>
                   <span className="text-xs font-semibold text-secondary uppercase tracking-wider">{e.category}</span>
                   <motion.h3 className="font-bold text-foreground mt-2 mb-2 group-hover:text-secondary transition-colors line-clamp-2 min-h-[3rem]" whileHover={{ x: 3 }}>
