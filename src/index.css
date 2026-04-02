@@ -104,4 +104,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* CSS-native fade-in: runs before JS, prevents black screen on cold start */
+  @keyframes appFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .app-fadein {
+    animation: appFadeIn 0.7s ease-out forwards;
+  }
 }

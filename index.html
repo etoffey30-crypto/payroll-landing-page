@@ -19,12 +19,13 @@
     <meta name="twitter:site" content="@PayrollGhana" />
     <meta name="twitter:image" content="/favicon.png" />
 
-    <!-- Prevent flash of white screen -->
+    <!-- Prevent flash of white/dark screen on load -->
     <style>
-      html, body {
-        background-color: #060d17;
+      html, body, #root {
+        background-color: hsl(210, 20%, 98%);
         margin: 0;
         padding: 0;
+        min-height: 100vh;
       }
     </style>
   </head>

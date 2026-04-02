@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -21,11 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <SocialSidebar />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      <div className="app-fadein">
         <BrowserRouter basename={window.location.hostname.includes(".github.io") ? "/payroll-landing-page/" : "/"}>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -38,7 +33,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
-      </motion.div>
+      </div>
     </TooltipProvider>
   </QueryClientProvider>
 );
